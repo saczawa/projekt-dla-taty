@@ -1,0 +1,18 @@
+body
+{
+	margin: 0;
+	padding: 0px 60px;
+	background-color: #29201B;
+	color: #efefef;
+    font-size: 17px;
+
+}
+
+
+
+.window
+{
+	padding: 5px;
+
+	background-color: rebeccapurple;
+}
