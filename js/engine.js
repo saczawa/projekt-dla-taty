@@ -46,8 +46,6 @@ function Calendar(){
             }     
             
         }
-        
-     
     console.log(calendar);
 }
 function newStudent(name, surname, price, day, time, how_long) {
