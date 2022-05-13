@@ -1,7 +1,26 @@
-let student_list =[];
-let student_list_test =["Mateusz", "Saczawa", 50, "Poniedziałek", 11, 1];
-let student_index=0;
+let studentList =[];
+
+
+let studentIndex=0;
 let calendar = [];
+
+
+// [Name, Surname, price, day, hour, how long]
+function loadAtStart() {
+    studentList.push(["Mateusz", "Saczawa", 50, "Poniedziałek", 11, 1]);
+    studentList.push(["Tomek", "Marczuk", 60, "Środa", 18, 2]);
+    studentList.push(["Wojtek", "Małysz", 60, "Wtorek", 18, 2]);
+    studentList.push(["Kajtek", "Gierczak", 60, "Czwartek", 18, 1]);
+    studentList.push(["Kuba", "Górski", 60, "Wtorek", 15, 1]);
+    studentList.push(["Oliwia", "Grabowska", 60, "Środa", 11, 1]);
+    studentList.push(["Jagoda", "Schabowy", 60, "Środa", 10, 3]);
+    studentList.push(["Borys", "Kot", 60, "Poniedziałek", 18, 2]);
+    //console.log(studentList);
+
+    Student(1);
+    
+}
+
 
 /*
     Student:
@@ -20,16 +39,41 @@ let calendar = [];
 
     zrobic dla przypadow kilka razy w tygodniu
 */
-function Student(index,name, surname, price, day, time, how_long) {
+function getCurrentDay(){
 
-    this.index = index;
-    this.name = name;
-    this.price = price;
-    this.day = day;
-    this.time = time;
-    this.how_long = how_long;
+    var today = new Date();
+
+    switch(today.getDay()) {
+
+        case 1: return "Poniedziałek";
+        case 2: return "Wtorek";
+        case 3: return "Środa";
+        case 4: return "Czwartek";
+        case 5: return "Piątek";
+        case 6: return "Sobota";
+        case 7: return "Niedziela";
+        
+    }
+    return console.log("Problem with function getDay()")
+}
+
+function getCurrentHour() {
+    var today = new Date();
+
+    return today.getHours();
+}
+function Student(idStudent) {
     
-    return [index, name, price, day, time, how_long];
+   
+    var currentDay = getCurrentDay();
+    var currentHour = getCurrentHour();
+    
+    //nie dzuaka
+    for(student in studentList) {
+        console.log("E?:", studentList[student][4].value());
+    }
+
+    return studentList[idStudent];
 }
 
 /*
@@ -50,16 +94,16 @@ function Calendar(){
 }
 function newStudent(name, surname, price, day, time, how_long) {
     
-    student_list[student_index] = new Student(student_index, name, price, day, time, how_long);
-    student_index++;
+    studentList[studentIndex] = new Student(studentIndex, name, price, day, time, how_long);
+    studentIndex++;
     
     /*
         Zapis w pliku
 
     */
 
-    console.log(student_list);
-    console.log(student_index);
+    console.log(studentList);
+    console.log(studentIndex);
 }
 function upcoming_lesson() {
     
