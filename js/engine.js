@@ -17,7 +17,8 @@ function loadAtStart() {
     studentList.push(["Borys", "Kot", 60, "Poniedziałek", 18, 2]);
     //console.log(studentList);
 
-    Student(1);
+
+    findNextStudent();
     
 }
 
@@ -62,6 +63,14 @@ function getCurrentHour() {
 
     return today.getHours();
 }
+
+function findNextStudent() {
+
+    var today = new Date();
+    var currentTime = today.getDate();
+    console.log(currentTime.getHours);
+}
+
 function Student(idStudent) {
     
    
