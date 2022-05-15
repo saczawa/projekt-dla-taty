@@ -68,7 +68,7 @@ function findNextStudent() {
 
     var today = new Date();
     var currentTime = today.getDate();
-    console.log(currentTime.getHours);
+    console.log(currentTime);
 }
 
 function Student(idStudent) {
